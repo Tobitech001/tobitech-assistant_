@@ -1,40 +1,46 @@
-'use client';
+"use client";
 
-import Sidebar from '@/components/Sidebar';
-import Topbar from '@/components/Topbar';
-import DashboardCard from '@/components/DashboardCard';
-import { Bot, CalendarCheck2, SendHorizonal } from 'lucide-react';
+import { Card, CardContent } from "@/components/ui/card";
+import DashboardCard from "@/components/DashboardCard";
+import {
+  MessageSquare,
+  Timer,
+  Mail,
+  Bell,
+  Lightbulb,
+  User,
+} from "lucide-react";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen bg-gray-900 text-white">
-      <Sidebar />
-      <div className="flex-1 flex flex-col">
-        <Topbar />
+    <main className="min-h-screen bg-black text-white p-4 md:p-10">
+      <h1 className="text-3xl md:text-5xl font-bold mb-8">TOBI TECH Assistant</h1>
 
-        <main className="p-6">
-          <h1 className="text-2xl font-semibold mb-4">Welcome, Tobiloba 👋</h1>
-          <p className="text-gray-400 mb-6">Here’s your system summary today:</p>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <DashboardCard title="Platform Content Ideas" icon={<Lightbulb />}>
+          Facebook, Instagram, WhatsApp & Twitter posts auto-suggested daily.
+        </DashboardCard>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-            <DashboardCard
-              title="AI Assistant Status"
-              value="Active"
-              icon={<Bot />}
-            />
-            <DashboardCard
-              title="Scheduled Posts"
-              value="3 Pending"
-              icon={<SendHorizonal />}
-            />
-            <DashboardCard
-              title="Upcoming Tasks"
-              value="2 Reminders"
-              icon={<CalendarCheck2 />}
-            />
-          </div>
-        </main>
+        <DashboardCard title="Auto Telegram Posts" icon={<MessageSquare />}>
+          3 daily Telegram posts auto-scheduled & published.
+        </DashboardCard>
+
+        <DashboardCard title="Email Sending System" icon={<Mail />}>
+          Compose, schedule, and send to 5,000+ emails from rotating senders.
+        </DashboardCard>
+
+        <DashboardCard title="AI Ad Composer" icon={<User />}>
+          Converts form submissions into ads for 5 social platforms.
+        </DashboardCard>
+
+        <DashboardCard title="Assistant Reminders" icon={<Bell />}>
+          AI reminds you to post, check forms, or approve ad ideas.
+        </DashboardCard>
+
+        <DashboardCard title="Live Scheduler" icon={<Timer />}>
+          Auto content queue — hourly Telegram, daily email & social updates.
+        </DashboardCard>
       </div>
-    </div>
+    </main>
   );
 }
