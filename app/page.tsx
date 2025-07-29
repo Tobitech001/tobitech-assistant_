@@ -1,13 +1,24 @@
-export default function Home() {
+'use client';
+
+import Sidebar from '@/components/Sidebar';
+import Topbar from '@/components/Topbar';
+
+export default function HomePage() {
   return (
-    <main className="min-h-screen bg-black text-white p-6">
-      <div className="flex flex-col space-y-6">
-        <header className="text-3xl font-bold">TOBI TECH Assistant Dashboard</header>
-        <section className="bg-gray-900 p-4 rounded-xl shadow-md">
-          <h2 className="text-xl font-semibold mb-2">Welcome Back 👋</h2>
-          <p>This is your AI-powered assistant dashboard. Let’s begin!</p>
-        </section>
-      </div>
-    </main>
+    <div className="flex min-h-screen bg-gray-950 text-white">
+      {/* Sidebar */}
+      <Sidebar />
+
+      {/* Main area */}
+      <main className="flex-1 p-6">
+        <Topbar />
+
+        {/* Dashboard main content */}
+        <div className="mt-6">
+          <h1 className="text-3xl font-bold">Your AI Dashboard</h1>
+          <p className="mt-2 text-gray-400">Here’s your AI assistant control panel.</p>
+        </div>
+      </main>
+    </div>
   );
 }
